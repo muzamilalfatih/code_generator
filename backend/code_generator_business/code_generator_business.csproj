@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\code_generator_dataaccess\code_generator_dataaccess.csproj" />
+    <ProjectReference Include="..\shared_classes\shared_classes.csproj" />
+  </ItemGroup>
+
+</Project>

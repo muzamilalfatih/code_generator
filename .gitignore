@@ -1,0 +1,64 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+
+## VS-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsp
+*.pdb
+*.cache
+*.dbmdl
+
+## ADO.NET / SQL Server Express
+*.mdf
+*.ldf
+*.ndf
+*.sql
+
+## NuGet Packages
+*.nupkg
+project.lock.json
+project.assets.json
+# Comment this if you're using a local offline NuGet source:
+# packages/
+# If using local NuGet folder, unignore it:
+# !offline-packages/
+
+## Logs and Dumps
+*.log
+*.dmp
+
+## Testing
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+## VS Code
+.vscode/
+.history/
+
+## Rider / Resharper
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Publish folder (optional)
+[Pp]ublish/
+
+## Backup / temp
+*.tmp
+*.bak
+*.orig
+*.swp
+
+## OS-generated
+.DS_Store
+Thumbs.db
+ehthumbs.db
