@@ -41,7 +41,7 @@ namespace code_generator_business
             sb.AppendLine("     }");
             sb.AppendLine("}");
 
-            File.WriteAllText($"{clsUtil.APIProjectName}/Controllers/{className}sController.cs", sb.ToString());
+            File.WriteAllText($"{clsUtil.APIProjectName}/Controllers/{(tabe.Key.Equals("People",StringComparison.OrdinalIgnoreCase) ? tabe.Key : className)}sController.cs", sb.ToString());
         }
         private static string _GenerateCrud(IGrouping<string, TableColumnInfoDTO> table,  string className, IGrouping<string,viewInfoDTO>? view)
         {
