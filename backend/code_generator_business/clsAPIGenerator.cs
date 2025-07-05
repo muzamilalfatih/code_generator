@@ -29,9 +29,12 @@ namespace code_generator_business
             sb.AppendLine($"using {clsUtil.BussiessProjectName};");
             sb.AppendLine($"namespace {clsUtil.APIProjectName}.Controllers");
             sb.AppendLine("{");
-            sb.AppendLine($"    [Route(\"api/{clsUtil.ToCamel(className)}s\")]");
+            sb.AppendLine($"    [Route(\"api/{clsUtil.ToCamel(tabe.Key)}\")]");
             sb.AppendLine("     [ApiController]");
-            sb.AppendLine($"    public class {className}sController : ControllerBase");
+            if (tabe.Key.Equals("People",StringComparison.OrdinalIgnoreCase))
+                sb.AppendLine($"    public class {tabe.Key}Controller : ControllerBase");
+            else
+                sb.AppendLine($"    public class {className}sController : ControllerBase");
             sb.AppendLine("     {");
             string crud = _GenerateCrud(tabe, className, view);
             sb.AppendLine(crud);

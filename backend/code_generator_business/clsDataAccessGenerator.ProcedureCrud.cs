@@ -17,7 +17,12 @@ namespace code_generator_business
                 if (p.parameterName.Contains("id", StringComparison.OrdinalIgnoreCase) && procedure.Count() == 1)
                     sb.AppendLine($"                    command.Parameters.AddWithValue(\"{p.parameterName}\", id);");
                 else
-                    sb.AppendLine($"                    command.Parameters.AddWithValue(\"{p.parameterName}\", {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(p.parameterName.Substring(1))});");
+                {
+                    if (p.procedureName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                        sb.AppendLine($"                    command.Parameters.AddWithValue(\"{p.parameterName}\", (byte){clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(p.parameterName.Substring(1))});");
+                    else
+                        sb.AppendLine($"                    command.Parameters.AddWithValue(\"{p.parameterName}\", {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(p.parameterName.Substring(1))});");
+                }
             }
             return sb.ToString();
         }
@@ -147,7 +152,12 @@ namespace code_generator_business
                 if (method.Contains("GetDecimal", StringComparison.OrdinalIgnoreCase))
                     stringBuilder.AppendLine($"                                     Convert.ToSingle(reader.{method}(reader.GetOrdinal(\"{column.columnName}\"))),");
                 else
-                    stringBuilder.AppendLine($"                                     reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                {
+                    if (table.Key.Equals("people",StringComparison.InvariantCulture) && column.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                        stringBuilder.AppendLine($"                                    (enGender)reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                    else
+                        stringBuilder.AppendLine($"                                     reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                }
             }
             int lastNewLine = stringBuilder.ToString().LastIndexOf(Environment.NewLine);
             if (lastNewLine >= 0)

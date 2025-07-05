@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsdataaccessgenerator.procedurecrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\clsdataaccessgenerator.procedurecrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsapigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\clsapigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsdataaccessgenerator.rawcrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,30 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsbussinessgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\clsbussinessgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\code_generator_business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\code_generator_business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsapigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\clsapigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsdataaccessgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A0B86B2-4D45-44F3-9A64-B9ADF477912F}|code_generator_business\\code_generator_business.csproj|solutionrelative:code_generator_business\\clsdataaccessgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6F22361A-A35C-496C-9251-7277F4CA291E}|code_generator_dataaccess\\code_generator_dataaccess.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_dataaccess\\clsdatabasereaderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F22361A-A35C-496C-9251-7277F4CA291E}|code_generator_dataaccess\\code_generator_dataaccess.csproj|solutionrelative:code_generator_dataaccess\\clsdatabasereaderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B40D4EC-7C81-4CB5-B97C-82A6FBDC5D14}|code_generator_API\\code_generator_API.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_api\\controllers\\codewritercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B40D4EC-7C81-4CB5-B97C-82A6FBDC5D14}|code_generator_API\\code_generator_API.csproj|solutionrelative:code_generator_api\\controllers\\codewritercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B40D4EC-7C81-4CB5-B97C-82A6FBDC5D14}|code_generator_API\\code_generator_API.csproj|c:\\users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_api\\controllers\\databasereadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B40D4EC-7C81-4CB5-B97C-82A6FBDC5D14}|code_generator_API\\code_generator_API.csproj|solutionrelative:code_generator_api\\controllers\\databasereadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsAPIGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsAPIGenerator.cs",
+              "RelativeDocumentMoniker": "code_generator_business\\clsAPIGenerator.cs",
+              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsAPIGenerator.cs",
+              "RelativeToolTip": "code_generator_business\\clsAPIGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T09:04:38.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,9 +57,9 @@
               "RelativeDocumentMoniker": "code_generator_business\\clsDataAccessGenerator.RawCrud.cs",
               "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsDataAccessGenerator.RawCrud.cs",
               "RelativeToolTip": "code_generator_business\\clsDataAccessGenerator.RawCrud.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAywLoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T11:09:08.002Z",
+              "WhenOpened": "2025-07-05T09:02:06.4Z",
               "EditorCaption": ""
             },
             {
@@ -81,22 +70,9 @@
               "RelativeDocumentMoniker": "code_generator_business\\clsSharedClassessGenerator.cs",
               "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsSharedClassessGenerator.cs",
               "RelativeToolTip": "code_generator_business\\clsSharedClassessGenerator.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAArwDEAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:57:25.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clsDataAccessGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsDataAccessGenerator.cs",
-              "RelativeDocumentMoniker": "code_generator_business\\clsDataAccessGenerator.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsDataAccessGenerator.cs",
-              "RelativeToolTip": "code_generator_business\\clsDataAccessGenerator.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:56:09.12Z",
+              "WhenOpened": "2025-07-05T08:48:59.539Z",
               "EditorCaption": ""
             },
             {
@@ -107,35 +83,9 @@
               "RelativeDocumentMoniker": "code_generator_business\\clsCodeWriter.cs",
               "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsCodeWriter.cs",
               "RelativeToolTip": "code_generator_business\\clsCodeWriter.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwCwAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwCwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T07:43:59.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "clsDataAccessGenerator.ProcedureCrud.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsDataAccessGenerator.ProcedureCrud.cs",
-              "RelativeDocumentMoniker": "code_generator_business\\clsDataAccessGenerator.ProcedureCrud.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsDataAccessGenerator.ProcedureCrud.cs",
-              "RelativeToolTip": "code_generator_business\\clsDataAccessGenerator.ProcedureCrud.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:17:33.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "code_generator_business",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\code_generator_business.csproj",
-              "RelativeDocumentMoniker": "code_generator_business\\code_generator_business.csproj",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\code_generator_business.csproj",
-              "RelativeToolTip": "code_generator_business\\code_generator_business.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-04T09:56:53.884Z",
+              "WhenOpened": "2025-07-05T08:48:30.491Z",
               "EditorCaption": ""
             },
             {
@@ -146,61 +96,9 @@
               "RelativeDocumentMoniker": "code_generator_business\\clsBussinessGenerator.cs",
               "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsBussinessGenerator.cs",
               "RelativeToolTip": "code_generator_business\\clsBussinessGenerator.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwCUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:57:13.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "clsAPIGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsAPIGenerator.cs",
-              "RelativeDocumentMoniker": "code_generator_business\\clsAPIGenerator.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_business\\clsAPIGenerator.cs",
-              "RelativeToolTip": "code_generator_business\\clsAPIGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T07:26:01.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsDatabaseReaderData.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_dataaccess\\clsDatabaseReaderData.cs",
-              "RelativeDocumentMoniker": "code_generator_dataaccess\\clsDatabaseReaderData.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_dataaccess\\clsDatabaseReaderData.cs",
-              "RelativeToolTip": "code_generator_dataaccess\\clsDatabaseReaderData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T07:25:43.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DatabaseReaderController.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_API\\Controllers\\DatabaseReaderController.cs",
-              "RelativeDocumentMoniker": "code_generator_API\\Controllers\\DatabaseReaderController.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_API\\Controllers\\DatabaseReaderController.cs",
-              "RelativeToolTip": "code_generator_API\\Controllers\\DatabaseReaderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T07:24:40.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CodeWriterController.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_API\\Controllers\\CodeWriterController.cs",
-              "RelativeDocumentMoniker": "code_generator_API\\Controllers\\CodeWriterController.cs",
-              "ToolTip": "C:\\Users\\muzam\\source\\repos\\code_generator_repo\\backend\\code_generator_API\\Controllers\\CodeWriterController.cs",
-              "RelativeToolTip": "code_generator_API\\Controllers\\CodeWriterController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwCEAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T07:24:27.113Z",
+              "WhenOpened": "2025-07-05T08:46:18.473Z",
               "EditorCaption": ""
             }
           ]

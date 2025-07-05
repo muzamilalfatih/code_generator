@@ -13,6 +13,8 @@ namespace code_generator_business
         public static void GenerateSharedClasses( IGrouping<string, TableColumnInfoDTO> table,  IEnumerable<IGrouping<string, viewInfoDTO>>? views)
         {
             _GenerateTablesDTOs( table,  views);
+            if (table.Key.Equals("People", StringComparison.OrdinalIgnoreCase))
+                _GenerateGenderEnum();
         }
         private static void _GenerateViewsDTOs( IEnumerable<IGrouping<string, viewInfoDTO>> views,  string className)
         {
@@ -56,10 +58,13 @@ namespace code_generator_business
             sb.AppendLine("     {");
             foreach (var c in table)
             {
-                sb.AppendLine($"        public {clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable)} {clsUtil.ToCamel(c.columnName)} {{ get; set; }}");
+                if (c.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                    sb.AppendLine($"        public enGender {clsUtil.ToCamel(c.columnName)} {{ get; set; }}");
+                else
+                    sb.AppendLine($"        public {clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable)} {clsUtil.ToCamel(c.columnName)} {{ get; set; }}");
             }
             // add the construtor
-            sb.AppendLine($"        public {className}DTO(" + string.Join(", ", table.Select(c => $@"{clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable)} {clsUtil.ToCamel(c.columnName)}")) + ")");
+            sb.AppendLine($"        public {className}DTO(" + string.Join(", ", table.Select(c => $@"{(c.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase) ? "enGender" : clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable))} {clsUtil.ToCamel(c.columnName)}")) + ")");
 
             sb.AppendLine("         {");
             foreach (var c in table)
@@ -96,6 +101,16 @@ namespace code_generator_business
             sb.AppendLine("}");
 
             File.WriteAllText($"{clsUtil.SharedClassessProjectName}/Result.cs", sb.ToString());
+        }
+        private static void _GenerateGenderEnum()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"namespace {clsUtil.SharedClassessProjectName}");
+            sb.AppendLine("{");
+            sb.AppendLine("         public enum enGender : byte { Unknown = 0, Male = 1, Female = 2 };");
+            sb.AppendLine("}");
+
+            File.WriteAllText($"{clsUtil.SharedClassessProjectName}/enGender.cs", sb.ToString());
         }
     }
 }

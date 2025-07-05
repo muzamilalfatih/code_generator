@@ -13,7 +13,12 @@ namespace code_generator_business
                  if (c.columnName.Equals("id", StringComparison.OrdinalIgnoreCase) && table.Count() > 1 && queryType == enQueryType.add)
                     continue;
                 else
-                    sb.AppendLine($"                    command.Parameters.AddWithValue(\"@{c.columnName}\", {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)});");
+                {
+                    if (c.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                        sb.AppendLine($"                    command.Parameters.AddWithValue(\"@{c.columnName}\",(byte) {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)});");
+                    else
+                        sb.AppendLine($"                    command.Parameters.AddWithValue(\"@{c.columnName}\", {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)});");
+                }
             }
             return sb.ToString();
         }
@@ -115,7 +120,12 @@ namespace code_generator_business
                 if (method.Contains("GetDecimal", StringComparison.OrdinalIgnoreCase))
                     stringBuilder.AppendLine($"                                     Convert.ToSingle(reader.{method}(reader.GetOrdinal(\"{column.columnName}\"))),");
                 else
-                    stringBuilder.AppendLine($"                                     reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                {
+                    if (table.Key.Equals("People",StringComparison.OrdinalIgnoreCase) && column.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                        stringBuilder.AppendLine($"                                     (enGender) reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                    else
+                        stringBuilder.AppendLine($"                                     reader.{method}(reader.GetOrdinal(\"{column.columnName}\")),");
+                }
             }
             int lastNewLine = stringBuilder.ToString().LastIndexOf(Environment.NewLine);
             if (lastNewLine >= 0)
@@ -257,7 +267,8 @@ INSERT INTO {tableName}
 VALUES
       (
       @{paramList});
-SELECT SCOPE_IDENTITY();";
+SELECT SCOPE_IDENTITY();
+";
 
             return query;
         }
@@ -282,7 +293,8 @@ SELECT SCOPE_IDENTITY();";
 UPDATE {tableName}
 SET 
     {setClauseJoined}
-WHERE Id = @id;";
+WHERE Id = @Id;
+select @@ROWCOUNT";
 
             return query;
         }

@@ -50,7 +50,6 @@ namespace code_generator_business
                 className = table.Key.Substring(0, table.Key.Length - 1);
             StringBuilder sb = new StringBuilder();
 
-
             bool hasGetAll = false;
             bool hasGetById = false;
             bool hasAdd = false;

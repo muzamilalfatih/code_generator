@@ -31,9 +31,9 @@ namespace code_generator_business
             sb.AppendLine("         private enMode _mode;");
             foreach (var c in table)
             {
-                if (c.columnName.Contains($"{className}id", StringComparison.OrdinalIgnoreCase) )
-                    sb.AppendLine($"        public {clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable)} id  {{ get; set; }}");
-                else
+                if (c.columnName.Equals("Gender",StringComparison.OrdinalIgnoreCase))
+                    sb.AppendLine($"        public enGender {clsUtil.ToCamel(c.columnName)} {{ get; set; }}");
+                else 
                     sb.AppendLine($"        public {clsUtil.MapSqlToCSharpDataType(c.dataType, c.isNullable)} {clsUtil.ToCamel(c.columnName)} {{ get; set; }}");
             }
 
@@ -42,11 +42,7 @@ namespace code_generator_business
             sb.AppendLine("        {");
             foreach (var c in table)
             {
-                if (c.columnName.Contains($"{className}id", StringComparison.OrdinalIgnoreCase))
-                    sb.AppendLine($"            this.id = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
-
-                else
-                    sb.AppendLine($"            this.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
+                 sb.AppendLine($"            this.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
             }
             sb.AppendLine("             this._mode = mode;");
             sb.AppendLine("         }");
@@ -54,7 +50,7 @@ namespace code_generator_business
             sb.AppendLine("         {");
             sb.AppendLine("             get");
             sb.AppendLine("                 {");
-            sb.AppendLine($"                    return new {className}DTO(" + string.Join(", ", table.Select(c => $"this.{(c.columnName.Contains(className + "id",StringComparison.OrdinalIgnoreCase) ? "id" : clsUtil.ToCamel(c.columnName))}")) + ");");
+            sb.AppendLine($"                    return new {className}DTO(" + string.Join(", ", table.Select(c => $"this.{clsUtil.ToCamel(c.columnName)}")) + ");");
             sb.AppendLine("                 }");
             sb.AppendLine("         }");
             string crud = _GenerateCRUD(table, view);

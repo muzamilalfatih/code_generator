@@ -40,7 +40,7 @@ project.assets.json
 *.coveragexml
 
 ## VS Code
-.vscode/
+.vs/
 .history/
 
 ## Rider / Resharper
