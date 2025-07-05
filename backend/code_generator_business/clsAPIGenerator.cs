@@ -31,17 +31,14 @@ namespace code_generator_business
             sb.AppendLine("{");
             sb.AppendLine($"    [Route(\"api/{clsUtil.ToCamel(tabe.Key)}\")]");
             sb.AppendLine("     [ApiController]");
-            if (tabe.Key.Equals("People",StringComparison.OrdinalIgnoreCase))
-                sb.AppendLine($"    public class {tabe.Key}Controller : ControllerBase");
-            else
-                sb.AppendLine($"    public class {className}sController : ControllerBase");
+            sb.AppendLine($"    public class {tabe.Key}Controller : ControllerBase");
             sb.AppendLine("     {");
             string crud = _GenerateCrud(tabe, className, view);
             sb.AppendLine(crud);
             sb.AppendLine("     }");
             sb.AppendLine("}");
 
-            File.WriteAllText($"{clsUtil.APIProjectName}/Controllers/{(tabe.Key.Equals("People",StringComparison.OrdinalIgnoreCase) ? tabe.Key : className)}sController.cs", sb.ToString());
+            File.WriteAllText($"{clsUtil.APIProjectName}/Controllers/{tabe.Key}Controller.cs", sb.ToString());
         }
         private static string _GenerateCrud(IGrouping<string, TableColumnInfoDTO> table,  string className, IGrouping<string,viewInfoDTO>? view)
         {

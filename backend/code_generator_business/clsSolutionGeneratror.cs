@@ -100,44 +100,42 @@ namespace code_generator_business
         }
         private static void _AddSwaggerToProgram()
         {
-            
 
             string programPath = Path.Combine(clsUtil.APIProjectName, "Program.cs");
             if (!File.Exists(programPath)) return;
 
-            string programText = File.ReadAllText(programPath);
+            var sb = new StringBuilder();
+            // Add required using
+            sb.AppendLine("using System.Text.Json.Serialization;");
+            sb.AppendLine();
 
-            // Remove .NET 8 AddOpenApi / MapOpenApi
-            programText = programText.Replace("builder.Services.AddOpenApi();", "");
-            programText = programText.Replace("app.MapOpenApi();", "");
+            // Program.cs content
+            sb.AppendLine("var builder = WebApplication.CreateBuilder(args);");
+            sb.AppendLine(@"builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });");
+            sb.AppendLine("builder.Services.AddEndpointsApiExplorer();");
+            sb.AppendLine("builder.Services.AddSwaggerGen();");
+            sb.AppendLine();
+            sb.AppendLine("var app = builder.Build();");
+            sb.AppendLine();
+            sb.AppendLine("if (app.Environment.IsDevelopment())");
+            sb.AppendLine("{");
+            sb.AppendLine("    app.UseSwagger();");
+            sb.AppendLine("    app.UseSwaggerUI();");
+            sb.AppendLine("}");
+            sb.AppendLine();
+            sb.AppendLine("app.UseHttpsRedirection();");
+            sb.AppendLine("app.UseAuthorization();");
+            sb.AppendLine("app.MapControllers();");
+            sb.AppendLine();
+            sb.AppendLine("app.Run();");
 
-            // Inject Swashbuckle and MVC setup if not already present
-            if (!programText.Contains("AddSwaggerGen"))
-            {
-                programText = programText.Replace(
-                    "var builder = WebApplication.CreateBuilder(args);",
-                    @"var builder = WebApplication.CreateBuilder(args);
-                    builder.Services.AddControllers();
-                    builder.Services.AddEndpointsApiExplorer();
-                    builder.Services.AddSwaggerGen();");
+            // Overwrite Program.cs
+            File.WriteAllText(programPath, sb.ToString());
 
-                programText = programText.Replace(
-                    "var app = builder.Build();",
-                    @"var app = builder.Build();
-
-                    if (app.Environment.IsDevelopment())
-                    {
-                        app.UseSwagger();
-                        app.UseSwaggerUI();
-                    }
-
-                    app.UseHttpsRedirection();
-                    app.UseAuthorization();
-                    app.MapControllers();");
-            }
-
-            // Write back the modified Program.cs
-            File.WriteAllText(programPath, programText);
             _LaunchChromeByDefault();
         }
         private static void _LaunchChromeByDefault()
