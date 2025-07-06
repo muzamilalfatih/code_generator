@@ -133,7 +133,12 @@ namespace code_generator_business
             foreach (var c in table)
             {
                 if (!c.columnName.Contains("id",StringComparison.OrdinalIgnoreCase))
-                    sb.AppendLine($"                result.data.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
+                {
+                    if (className.Equals("User", StringComparison.OrdinalIgnoreCase) && c.columnName.Equals("Password", StringComparison.OrdinalIgnoreCase))
+                        sb.AppendLine("                 result.Data.password = Utility.ComputeHash(userDTO.password);");
+                    else
+                        sb.AppendLine($"                result.data.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
+                }
             }
             sb.AppendLine("            Result<int> savingResult = await result.data.SaveAsync();");
             sb.AppendLine("            if (savingResult.success)");
