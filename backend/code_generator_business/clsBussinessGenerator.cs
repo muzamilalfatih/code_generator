@@ -12,6 +12,28 @@ namespace code_generator_business
 {
     internal class clsBussinessGenerator
     {
+        public static void GenerateUtilClass()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("public static class Utility");
+            sb.AppendLine("{");
+            sb.AppendLine("    static public string ComputeHash(string input)");
+            sb.AppendLine("    {");
+            sb.AppendLine("        //SHA is Secutred Hash Algorithm.");
+            sb.AppendLine("        // Create an instance of the SHA-256 algorithm");
+            sb.AppendLine("        using (SHA256 sha256 = SHA256.Create())");
+            sb.AppendLine("        {");
+            sb.AppendLine("            // Compute the hash value from the UTF-8 encoded input string");
+            sb.AppendLine("            byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));");
+            sb.AppendLine("");
+            sb.AppendLine("            // Convert the byte array to a lowercase hexadecimal string");
+            sb.AppendLine("            return BitConverter.ToString(hashBytes).Replace(\"-\", \"\").ToLower();");
+            sb.AppendLine("        }");
+            sb.AppendLine("    }");
+            sb.AppendLine("}");
+            File.WriteAllText($"{clsUtil.BussiessProjectName}/clsUtility.cs", sb.ToString());
+        }
         public static void GenerateBussiness( IGrouping<string, TableColumnInfoDTO> table, IGrouping<string,viewInfoDTO>? view)
         {
             string className;
@@ -21,6 +43,8 @@ namespace code_generator_business
                 className = table.Key.Substring(0, table.Key.Length - 1);
 
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("using System.Security.Cryptography;;");
+            sb.AppendLine("using System.Text;;");
             sb.AppendLine("using SharedClasses;");
             sb.AppendLine($"using {clsUtil.DataAcessProjectName};");
             sb.AppendLine($"namespace {clsUtil.BussiessProjectName}");
@@ -42,7 +66,19 @@ namespace code_generator_business
             sb.AppendLine("        {");
             foreach (var c in table)
             {
-                 sb.AppendLine($"            this.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
+                if (className.Equals("User",StringComparison.OrdinalIgnoreCase) && c.columnName.Equals("Password",StringComparison.OrdinalIgnoreCase))
+                {
+                    sb.AppendLine("             if (mode == enMode.AddNew)");
+                    sb.AppendLine("             {");
+                    sb.AppendLine("                 this.Password = Utility.ComputeHash(userDTO.password);");
+                    sb.AppendLine("             }");
+                    sb.AppendLine("             else");
+                    sb.AppendLine("             {");
+                    sb.AppendLine("                 this.password = userDTO.password;");
+                    sb.AppendLine("             }");
+                }
+                else
+                    sb.AppendLine($"            this.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
             }
             sb.AppendLine("             this._mode = mode;");
             sb.AppendLine("         }");

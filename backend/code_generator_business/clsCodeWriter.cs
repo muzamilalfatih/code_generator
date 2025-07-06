@@ -38,7 +38,7 @@ namespace code_generator_business
             var groubedProcedure = proceduresReuslt.data.GroupBy(t => t.procedureName);
             var groupedViews = viewsResult.data.GroupBy(t => t.viewName);
             clsSharedClassessGenerator.GenerateResultClass();
-
+            clsBussinessGenerator.GenerateUtilClass();
             foreach ( IGrouping<string, TableColumnInfoDTO> tabe in groupedTables )
             {
                 IEnumerable<IGrouping<string, viewInfoDTO>> tableViews = groupedViews.Where(v => v.Key.Contains(tabe.Key.Substring(0, tabe.Key.Length - 1), StringComparison.OrdinalIgnoreCase));
