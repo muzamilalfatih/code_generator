@@ -135,7 +135,7 @@ namespace code_generator_business
                 if (!c.columnName.Contains("id",StringComparison.OrdinalIgnoreCase))
                 {
                     if (className.Equals("User", StringComparison.OrdinalIgnoreCase) && c.columnName.Equals("Password", StringComparison.OrdinalIgnoreCase))
-                        sb.AppendLine("                 result.Data.password = Utility.ComputeHash(userDTO.password);");
+                        sb.AppendLine("                 result.data.password = Utility.ComputeHash(userDTO.password);");
                     else
                         sb.AppendLine($"                result.data.{clsUtil.ToCamel(c.columnName)} = {clsUtil.ToCamel(className)}DTO.{clsUtil.ToCamel(c.columnName)};");
                 }

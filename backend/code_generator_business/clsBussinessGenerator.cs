@@ -15,7 +15,8 @@ namespace code_generator_business
         public static void GenerateUtilClass()
         {
             var sb = new StringBuilder();
-
+            sb.AppendLine("using System.Security.Cryptography;");
+            sb.AppendLine("using System.Text;");
             sb.AppendLine("public static class Utility");
             sb.AppendLine("{");
             sb.AppendLine("    static public string ComputeHash(string input)");
@@ -43,8 +44,11 @@ namespace code_generator_business
                 className = table.Key.Substring(0, table.Key.Length - 1);
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("using System.Security.Cryptography;;");
-            sb.AppendLine("using System.Text;;");
+            if (className.Equals("User",StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine("using System.Security.Cryptography;");
+                sb.AppendLine("using System.Text;");
+            }
             sb.AppendLine("using SharedClasses;");
             sb.AppendLine($"using {clsUtil.DataAcessProjectName};");
             sb.AppendLine($"namespace {clsUtil.BussiessProjectName}");
@@ -70,7 +74,7 @@ namespace code_generator_business
                 {
                     sb.AppendLine("             if (mode == enMode.AddNew)");
                     sb.AppendLine("             {");
-                    sb.AppendLine("                 this.Password = Utility.ComputeHash(userDTO.password);");
+                    sb.AppendLine("                 this.password = Utility.ComputeHash(userDTO.password);");
                     sb.AppendLine("             }");
                     sb.AppendLine("             else");
                     sb.AppendLine("             {");
