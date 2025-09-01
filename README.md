@@ -36,7 +36,7 @@ The application follows a Three-Tier Architecture, comprising:
 
 4. Restore NuGet packages  
    Go to Tools > NuGet Package Manager > Manage NuGet Packages for Solution and restore missing packages.
-5. Edit the connection string 
+5. Update the connection string 
 6. Build and run  
    Use Build > Build Solution and Debug > Start Debugging to launch the application.
 7. The system will:
